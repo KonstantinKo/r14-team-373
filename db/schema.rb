@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018154856) do
+ActiveRecord::Schema.define(version: 20141018172823) do
 
   create_table "comments", force: true do |t|
     t.integer  "treasure_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20141018154856) do
     t.integer  "role"
     t.string   "provider"
     t.string   "uid"
+    t.string   "nickname"
   end
 
 end
