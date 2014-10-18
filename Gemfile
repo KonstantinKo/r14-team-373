@@ -14,10 +14,14 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 # bootswatch themes
 gem 'bootswatch-rails'
+gem "font-awesome-rails"
 gem 'pundit'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1'
 gem 'slim-rails'
 gem 'chewy'
+gem 'active_data'
+gem 'kaminari'
+
 gem 'therubyracer', :platform=>:ruby
 gem 'acts-as-taggable-on'
 gem 'arcane'

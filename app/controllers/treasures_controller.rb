@@ -17,4 +17,8 @@ class TreasuresController < ApplicationController
       render :new
     end
   end
+  def index
+    @search = TreasureSearch.new(params[:search])
+    @treasures = @search.search.page(params[:page])
+  end
 end

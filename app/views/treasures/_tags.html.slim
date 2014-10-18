@@ -1,0 +1,4 @@
+.col-md-3.tag-list
+  h3 Filter
+  - ActsAsTaggableOn::Tag.all.each do |tag|
+    a.btn.btn-default.btn-sm= tag.name

@@ -1,0 +1,6 @@
+.well.well-sm
+  h4= treasure.title
+  p= treasure.description
+  ul.tag-list
+    - treasure.tags.each do |tag|
+      li.btn.btn-default.btn-xs= tag
