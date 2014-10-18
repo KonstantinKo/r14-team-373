@@ -1,9 +1,11 @@
 h3 Arr here I be sharing me booty
 
 = simple_form_for @treasure do |f|
-  = f.input :title, placeholder: 'Please enter a title...', label: false
-  = f.input :description, as: :text, placeholder: '... and a description.', label: false
-  = f.button :submit, value: 'OK'
+  .col-xs-6
+    = f.input :title, placeholder: 'Please enter a title...', label: false
+    = f.input :description, as: :text, placeholder: '...and a description.', label: false
+    = f.button :submit, value: 'OK'
 
-  ul#mytags.form-group
-  = f.hidden_field :tag_list, id: 'submit_tag_names', class: 'form-control'
+  .col-xs-6
+    ul#tags.form-group
+    = f.hidden_field :tag_list

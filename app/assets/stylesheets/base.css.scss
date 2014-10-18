@@ -34,7 +34,12 @@ ul.tag-list {
 }
 
 // for tag input
+
 ul.form-group {
   list-style-type: none;
   padding-left: 0;
+}
+
+ul.form-group li {
+  display: inline;
 }
