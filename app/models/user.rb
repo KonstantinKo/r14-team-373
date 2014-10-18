@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
-      user.email = auth['email']
+      user.email = auth['info']['email']
+      user.nickname = auth['info']['nickname']
     end
   end
 
