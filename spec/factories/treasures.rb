@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :treasure do
     title "MyString"
-description "MyText"
+    description "MyText"
   end
 
 end
