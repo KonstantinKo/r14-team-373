@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'chewy'
 gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'better_errors'
