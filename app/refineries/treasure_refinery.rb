@@ -1,5 +1,5 @@
 class TreasureRefinery < Arcane::Refinery
   def create
-    [:title, :description]
+    [:title, :description, :tag_list]
   end
 end

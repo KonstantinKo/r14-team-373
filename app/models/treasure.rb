@@ -12,4 +12,10 @@ class Treasure < ActiveRecord::Base
 
   # Search
   update_index 'treasures#treasure', :self
+
+  # Methods
+
+  def tags_string
+    tag_list.join(', ')
+  end
 end

@@ -8,5 +8,5 @@ h3 Arr here I be sharing me booty
 
   .col-xs-6
     ul#tags.form-group
-    = f.hidden_field :tag_list
+    = f.hidden_field :tag_list, value: @treasure.tags_string
     = render 'snippet_fields', f: f

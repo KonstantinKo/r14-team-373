@@ -1,4 +1,4 @@
-$(document).ready ->
+tagIt = ->
   $('#tags').tagit(
     tagSource: (search, showChoices) ->
       that = this
@@ -15,3 +15,6 @@ $(document).ready ->
   ).children('li').children('input').attr(
     class: "form-control"
   )
+
+$(document).ready tagIt
+$(document).on 'page:load', tagIt
