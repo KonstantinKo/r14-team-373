@@ -1,4 +1,5 @@
 = simple_form_for @search || TreasureSearch.new, url: treasures_path, method: :get do |f|
+  = f.input :tag_list, as: :hidden
   = f.input :query, wrapper: :group, label:false do
     = f.input_field :query, class: 'form-control', placeholder: 'search'
     .input-group-btn
