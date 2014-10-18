@@ -42,3 +42,15 @@ ul.form-group {
   list-style-type: none;
   padding-left: 0;
 }
+
+.search-container {
+  margin-left: ($grid-gutter-width / -2);
+  margin-right: ($grid-gutter-width / -2);
+}
+
+@media (min-width: $screen-md) {
+  .search-container .tag-list {
+    height: 10px;
+    overflow: visible; 
+  }
+}
