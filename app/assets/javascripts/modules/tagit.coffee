@@ -1,5 +1,5 @@
 $(document).ready ->
-  $('#mytags').tagit(
+  $('#tags').tagit(
     tagSource: (search, showChoices) ->
       that = this
       $.ajax
@@ -8,7 +8,10 @@ $(document).ready ->
           q: search.term
         success: (choices) ->
           showChoices that._subtractArray(choices, that.assignedTags())
-    show_tag_url: '/tags/'
+    tagLimit: 5
     singleField: true
-    singleFieldNode: $('#submit_tag_names')
-  ).children('li').children('input').addClass "form-control"
+    singleFieldNode: $('[name="treasure[tag_list]"]')
+    placeholderText: 'Give us a few tags.'
+  ).children('li').children('input').attr(
+    class: "form-control"
+  )

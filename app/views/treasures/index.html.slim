@@ -9,11 +9,14 @@
         | you want to share and annotate?
       = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary"
 .row
-  .col-md-9
+  .col-md-12
     h2 Find a treasure
+.search-container
+  .col-md-9
     = render "search"
-
-    - @treasures.each do |treasure|
-      = render "treasure_short", treasure: treasure
   .col-md-3
     = render "tags"
+.row
+  .col-md-9
+    - @treasures.each do |treasure|
+      = render "treasure_short", treasure: treasure
