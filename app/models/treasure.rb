@@ -3,7 +3,7 @@ class Treasure < ActiveRecord::Base
   acts_as_taggable
 
   # Associations
-  has_many :snippets, as: :snippetable
+  has_many :snippets, as: :snippetable, counter_cache: true
   has_many :comments
 
   # Validations
