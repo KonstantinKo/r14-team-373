@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
 
   def self.create_with_omniauth auth
+    puts auth
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
