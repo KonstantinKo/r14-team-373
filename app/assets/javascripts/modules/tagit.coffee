@@ -1,5 +1,5 @@
 $(document).ready ->
-  $('#mytags').tagit
+  $('#mytags').tagit(
     tagSource: (search, showChoices) ->
       that = this
       $.ajax
@@ -11,3 +11,4 @@ $(document).ready ->
     show_tag_url: '/tags/'
     singleField: true
     singleFieldNode: $('#submit_tag_names')
+  ).children('li').children('input').addClass "form-control"

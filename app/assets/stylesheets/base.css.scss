@@ -22,3 +22,9 @@ ul.tag-list {
     display: inline-block;
   }
 }
+
+// for tag input
+ul.form-group {
+  list-style-type: none;
+  padding-left: 0;
+}
