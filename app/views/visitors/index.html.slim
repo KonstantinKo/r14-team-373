@@ -9,6 +9,17 @@
     = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary"
 .row[id="treasure-index"]
   .col-md-9
-    h3 Search bar
-  .col-md-3
-    h2 tags
+    h3 Find a treasure
+    form[role="search"]
+      .input-group
+        input.form-control[type="text" name="q" placeholder="search"]
+        .input-group-btn
+          button.btn.btn-default[type="submit"]
+            span.glyphicon.glyphicon-search
+  .col-md-3.tag-list
+    h3 Filter
+    a.btn.btn-default.btn-sm.active Ruby
+    a.btn.btn-default.btn-sm Rails
+    a.btn.btn-default.btn-sm Authentification
+    a.btn.btn-default.btn-sm Serialisation
+    a.btn.btn-default.btn-sm.active Slim
