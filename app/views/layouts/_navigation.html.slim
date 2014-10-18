@@ -14,6 +14,17 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         li= link_to 'Create a new treasure', new_treasure_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          li= link_to "Sign out", signout_path
+          li= link_to signout_path do
+            i.fa.fa-sign-out
+            span Sign out
         - else
-        	li= link_to "Sign in", signin_path
+          li= link_to "/auth/github" do
+            i.fa.fa-github>
+            span Sign in with Github
+          li= link_to "/auth/heroku" do
+            i.fa.icon-heroku>
+            span Sign in with Heroku
+          - unless Rails.env.production?
+            li= link_to "/auth/developer" do
+              i.fa.fa-repeat>
+              span as dev
