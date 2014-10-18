@@ -5,6 +5,10 @@
 
 .tag-list a {
   margin: 4px 4px 4px 0;
+  span.badge {
+    font-size: 10px;
+    margin-left: 5px;
+  }
 }
 
 .input-group {
