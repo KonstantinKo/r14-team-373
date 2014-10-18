@@ -1,7 +1,4 @@
 .col-md-3.tag-list
   h3 Filter
-  a.btn.btn-default.btn-sm.active Ruby
-  a.btn.btn-default.btn-sm Rails
-  a.btn.btn-default.btn-sm Authentification
-  a.btn.btn-default.btn-sm Serialisation
-  a.btn.btn-default.btn-sm.active Slim
+  - ActsAsTaggableOn::Tag.all.each do |tag|
+    a.btn.btn-default.btn-sm= tag.name
