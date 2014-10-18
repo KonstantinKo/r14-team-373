@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Tags seeds
+
+Icons::TAGICONS.keys.each do |key|
+  ActsAsTaggableOn::Tag.create(name: key)
+end
