@@ -18,7 +18,7 @@ class TreasuresController < ApplicationController
     end
   end
   def index
-    @search = TreasureSearch.new(params[:search])
+    @search = TreasureSearch.new(params[:treasure_search])
     @treasures = @search.search.page(params[:page])
   end
 end

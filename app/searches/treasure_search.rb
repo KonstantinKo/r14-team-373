@@ -21,7 +21,7 @@ class TreasureSearch
   end
 
   def search
-    [query_string, tags_filter].compact.reduce(:merge) || Treasure.all
+    @search||= fresh? Treasure.all : [query_string, tags_filter,tags_facets].compact.reduce(:merge)
   end
 
   def query_string
@@ -32,4 +32,15 @@ class TreasureSearch
     index.filter(terms: {tags: tags}) if tags?
   end
 
+  def tags_facets
+    index.facets(tags: {terms: {field: 'tags'}})
+  end
+
+  def fresh?
+    TreasureSearch.new.attributes.compact.empty?
+  end
+
+  #def available_tags
+  #  fresh? ActsAsTaggableOn::Tag.all : @search.
+  #end
 end
