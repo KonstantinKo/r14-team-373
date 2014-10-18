@@ -27,6 +27,7 @@ gem 'acts-as-taggable-on'
 gem 'arcane'
 gem 'omniauth-github'
 gem 'omniauth-heroku'
+gem 'heroku-api'
 
 group :development do
   gem 'better_errors'

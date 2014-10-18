@@ -6,9 +6,11 @@ class User < ActiveRecord::Base
     puts auth
     create! do |user|
       user.provider = auth['provider']
+
       user.uid = auth['uid']
       user.email = auth['info']['email']
       user.nickname = auth['info']['nickname']
+
     end
   end
 
