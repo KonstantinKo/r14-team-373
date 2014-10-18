@@ -56,6 +56,14 @@ ul.form-group li {
 @media (min-width: $screen-md) {
   .search-container .tag-list {
     height: 10px;
-    overflow: visible; 
+    overflow: visible;
   }
+}
+
+header .navbar-inverse {
+  background-color: #996666;
+}
+
+header a.navbar-brand {
+  padding: 0;
 }
