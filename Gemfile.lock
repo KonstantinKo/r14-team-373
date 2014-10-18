@@ -33,6 +33,9 @@ GEM
     acts-as-taggable-on (3.4.2)
       activerecord (>= 3.2, < 5)
     addressable (2.3.6)
+    arcane (1.1.1)
+      actionpack (>= 3.0.0, < 5.0.0)
+      activesupport (>= 3.0.0, < 5.0.0)
     arel (5.0.1.20140414130214)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -89,6 +92,8 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     hike (1.2.3)
     i18n (0.6.11)
     interception (0.5)
@@ -245,6 +250,7 @@ PLATFORMS
 DEPENDENCIES
   active_data
   acts-as-taggable-on
+  arcane
   better_errors
   binding_of_caller
   bootstrap-sass
@@ -255,6 +261,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   faker
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

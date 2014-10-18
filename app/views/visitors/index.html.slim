@@ -7,8 +7,5 @@
       br
       | you want to share and annotate?
     = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary"
-.row[id="treasure-index"]
-  .col-md-9
-    h3 Search bar
-  .col-md-3
-    h2 tags
+
+= render "treasures/search"

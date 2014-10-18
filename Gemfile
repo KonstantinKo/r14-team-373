@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 # bootswatch themes
 gem 'bootswatch-rails'
+gem "font-awesome-rails"
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
@@ -23,6 +24,7 @@ gem 'kaminari'
 
 gem 'therubyracer', :platform=>:ruby
 gem 'acts-as-taggable-on'
+gem 'arcane'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
