@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 # bootswatch themes
 gem 'bootswatch-rails'
+gem "font-awesome-rails"
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
