@@ -26,8 +26,8 @@ gem 'therubyracer', :platform=>:ruby
 gem 'acts-as-taggable-on'
 gem 'arcane'
 gem 'omniauth-github'
-gem 'omniauth-heroku'
-gem 'heroku-api'
+gem 'omniauth-heroku', '~> 0.2.0.pre'
+
 
 group :development do
   gem 'better_errors'
