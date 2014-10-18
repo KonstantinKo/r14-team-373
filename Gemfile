@@ -20,6 +20,7 @@ gem 'slim-rails'
 gem 'chewy'
 gem 'therubyracer', :platform=>:ruby
 gem 'acts-as-taggable-on'
+gem 'arcane'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

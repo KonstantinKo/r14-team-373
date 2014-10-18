@@ -1,6 +1,6 @@
 h3 Arr here I be sharing me booty
 
-= simple_form_for Treasure.new do |f|
+= simple_form_for @treasure do |f|
   = f.input :title, placeholder: 'Please enter a title...', label: false
   = f.input :description, as: :text, placeholder: '... and a description.', label: false
   = f.button :submit, value: 'OK'
