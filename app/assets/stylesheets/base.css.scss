@@ -5,6 +5,10 @@
 
 .tag-list a {
   margin: 4px 4px 4px 0;
+  span.badge {
+    font-size: 10px;
+    margin-left: 5px;
+  }
 }
 
 .input-group {
@@ -42,4 +46,16 @@ ul.form-group {
 
 ul.form-group li {
   display: inline;
+}
+
+.search-container {
+  margin-left: ($grid-gutter-width / -2);
+  margin-right: ($grid-gutter-width / -2);
+}
+
+@media (min-width: $screen-md) {
+  .search-container .tag-list {
+    height: 10px;
+    overflow: visible; 
+  }
 }

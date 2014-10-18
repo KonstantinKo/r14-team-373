@@ -1,5 +1,5 @@
-h3 Filter
 .tag-list
-  - ActsAsTaggableOn::Tag.all.each do |tag|
+  - @search.available_tags.each do |tag|
     a.btn.btn-default.btn-sm>
-      = tag.name
+      = tag["term"]
+      span.badge=< tag["count"]
