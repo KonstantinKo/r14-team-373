@@ -12,7 +12,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li= link_to 'Create a new treasure', new_treasure_path
+      ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          = link_to "Sign out", signout_path
+          li= link_to "Sign out", signout_path
         - else
-        	= link_to "Sign in", signin_path
+        	li= link_to "Sign in", signin_path
