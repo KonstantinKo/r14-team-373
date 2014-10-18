@@ -25,6 +25,9 @@ gem 'kaminari'
 gem 'therubyracer', :platform=>:ruby
 gem 'acts-as-taggable-on'
 gem 'arcane'
+gem 'omniauth-github'
+gem 'omniauth-heroku'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

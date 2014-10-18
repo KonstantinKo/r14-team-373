@@ -46,7 +46,8 @@ class TreasureSearch
   end
 
   def toggle tag
-    newtags =  tags.dup || []
+    newtags =  tags.dup if tags?
+    newtags ||=  []
     unless newtags.delete(tag)
       newtags << tag
     end

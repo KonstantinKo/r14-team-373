@@ -1,5 +1,6 @@
 class TreasuresController < ApplicationController
   after_action :set_cookie, only: [:index]
+  before_filter :authenticate_user!, only: [:new, :create]
   respond_to :html
 
   def show
