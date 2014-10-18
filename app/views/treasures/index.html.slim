@@ -1,3 +1,9 @@
-ul
-  - @treasures.each do |treasure|
-    li= treasure.title
+.row
+  .col-md-9
+    h2 Find a treasure
+    = render "search"
+
+    - @treasures.each do |treasure|
+      = render "treasure_short", treasure: treasure
+  .col-md-3
+    = render "tags"

@@ -9,4 +9,16 @@
 
 .input-group {
   margin-top: 4px;
+  margin-bottom: 30px;
+}
+
+ul.tag-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  > li {
+    margin: 0 4px 4px 0;
+    display: inline-block;
+  }
 }
