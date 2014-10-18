@@ -9,4 +9,7 @@ class Treasure < ActiveRecord::Base
   # Validations
   validates :title, presence: true
   validates :description, presence: true
+
+  # Search
+  update_index 'treasures#treasure', :self
 end
