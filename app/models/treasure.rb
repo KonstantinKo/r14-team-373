@@ -3,4 +3,6 @@ class Treasure < ActiveRecord::Base
 
   has_many :snippets, as: :snippetable
   has_many :comments
+
+  update_index 'treasures#treasure', :self
 end

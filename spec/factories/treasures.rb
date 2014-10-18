@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :treasure do
-    title "MyString"
-    description "MyText"
+    title { Faker::Lorem.word }
+    description { Faker::Lorem.paragraph }
+    tag_list { Faker::Lorem.words.join(",") }
   end
 
 end
