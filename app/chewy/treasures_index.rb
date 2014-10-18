@@ -12,6 +12,7 @@ class TreasuresIndex < Chewy::Index
     field :title, analyzer: 'title'
     field :description
     field :tags, index: 'not_analyzed', value: ->{ tags.map(&:name) }
+    field :snippets_count, index: 'not_analyzed', value: -> {snippets.count}
   end
 
 
