@@ -4,7 +4,7 @@
 }
 
 .tag-list a {
-  margin: 0 4px 4px 0;
+  margin: 4px 4px 4px 0;
 }
 
 .input-group {
@@ -20,6 +20,16 @@ ul.tag-list {
   > li {
     margin: 0 4px 4px 0;
     display: inline-block;
+  }
+}
+
+.icons {
+  font-size: 13px;
+  vertical-align: 2px;
+  margin-right: 1em;
+  > .fa {
+    font-size: 15px;
+    vertical-align: 0;
   }
 }
 
