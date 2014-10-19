@@ -5,7 +5,7 @@
 }
 
 // header buttons
-
+@media (min-width: 768px) {
 .navbar-inverse .navbar-nav {
   margin-left: 30px;
 
@@ -47,6 +47,8 @@
       border-bottom-right-radius: 15px;
     }
   }
+}
+
 }
 
 // home cta
