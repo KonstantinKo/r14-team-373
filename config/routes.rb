@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   get '/unearth_treasure' => 'treasures#unearth_treasure', as: :unearth_treasure
 
+  resources :users, only: [] do
+    resources :treasures, only: [:index]
+  end
+
   resources :treasures, only: [:new, :create, :index, :show], path: ""
 end

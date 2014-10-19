@@ -14,6 +14,7 @@ class TreasuresIndex < Chewy::Index
     field :tags, index: 'not_analyzed', value: -> { tags.map(&:name) }
     field :snippets_count, index: 'not_analyzed', value: -> { snippets.count }
     field :slug, index: 'not_analyzed'
-    field :user, value: -> { user.nickname }
+    field :user, value: -> { user.nickname }, index: 'not_analyzed'
+    field :user_id, value: -> { user.id }, index: 'not_analyzed'
   end
 end
