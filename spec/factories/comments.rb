@@ -1,9 +1,5 @@
 FactoryGirl.define do
   factory :comment do
-    treasure_id 1
-email "MyString"
-content "MyText"
-notify false
+    sequence(:content) { |n| "#{Faker::Lorem.paragraph}" }
   end
-
 end

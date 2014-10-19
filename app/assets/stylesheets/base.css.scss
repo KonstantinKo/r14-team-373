@@ -99,7 +99,7 @@ ul.tag-list {
 
 // for tag input
 
-ul.form-group {
+ul {
   list-style-type: none;
   padding-left: 0;
 }
@@ -129,4 +129,8 @@ header a.navbar-brand {
 
 textarea {
   resize: vertical;
+}
+
+a.btn.login-links {
+  margin: 10px;
 }

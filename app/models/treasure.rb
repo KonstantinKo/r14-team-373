@@ -11,7 +11,7 @@ class Treasure < ActiveRecord::Base
 
   # Associations
   has_many :snippets, as: :snippetable, counter_cache: true
-  has_many :comments, inverse_of: :treasure
+  has_many :comments, inverse_of: :treasure, counter_cache: true
   belongs_to :user, inverse_of: :treasures
   has_many :votes
   has_many :voting_users, through: :votes, source: :user
@@ -30,7 +30,7 @@ class Treasure < ActiveRecord::Base
   def snippets_attributes
     binding.pry
   end
-  
+
   def tags_string
     tag_list.join(', ')
   end

@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019181258) do
+ActiveRecord::Schema.define(version: 20141019190407) do
 
   create_table "comments", force: true do |t|
     t.integer  "treasure_id"
-    t.string   "email"
     t.text     "content"
     t.boolean  "notify"
     t.datetime "created_at"
@@ -85,7 +84,8 @@ ActiveRecord::Schema.define(version: 20141019181258) do
     t.integer  "snippets_count", default: 0, null: false
     t.integer  "user_id"
     t.string   "slug"
-    t.integer  "votes_count"
+    t.integer  "votes_count",    default: 0
+    t.integer  "comments_count"
   end
 
   create_table "users", force: true do |t|

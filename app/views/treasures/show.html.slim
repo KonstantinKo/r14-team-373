@@ -1,23 +1,22 @@
-h3= @treasure.title
-h4 Tags:
-p
-  = @treasure.tags_string
+.row
+  .col-md-12
+    h3= @treasure.title
+    = @treasure.tags_string
+
+    - if current_user && !current_user.voted_treasures.include?(@treasure)
+      = button_to treasure_votes_path(treasure_id: @treasure.id), method: :POST, remote: true, class: 'btn btn-default', form: { id: 'new_vote' } do
+        i.fa.fa-smile-o
+    - else
+      i.fa.fa-smile-o
 - @treasure.snippets.each do |snippet|
-  pre
-    code
-      == snippet.code
+  = render "snippet", snippet: snippet
 
+.row
+  .col-md-8
+    h4 Comments
+    p
+    = render 'comments/new', treasure: @treasure, comment: Comment.new
 
-- if current_user && !current_user.voted_treasures.include?(@treasure)
-  = button_to treasure_votes_path(treasure_id: @treasure.id), method: :POST, remote: true, class: 'btn btn-default', form: { id: 'new_vote' } do
-    i.fa.fa-smile-o
-- else
-  i.fa.fa-smile-o
-
-h4 Comments
-p
-  = render 'comments/new', treasure: @treasure, comment: Comment.new
-
-ul#comments
-  - @treasure.comments.each do |comment|
-    li= render 'comments/show', comment: comment
+    ul#comments
+      - @treasure.comments.each do |comment|
+        li= render 'comments/show', comment: comment
