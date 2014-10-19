@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019095915) do
+ActiveRecord::Schema.define(version: 20141019113400) do
 
   create_table "comments", force: true do |t|
     t.integer  "treasure_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141019095915) do
     t.boolean  "notify"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "friendly_id_slugs", force: true do |t|

@@ -1,3 +1,6 @@
+# ATTENTION: when adding new paths like /signin or /unearth_treasure, make
+# sure to add the path name to friendlyID's reserved words under
+# config/initializers/friendly_id.rb
 Rails.application.routes.draw do
   root to: 'treasures#index'
 
@@ -9,5 +12,7 @@ Rails.application.routes.draw do
 
   get '/unearth_treasure' => 'treasures#unearth_treasure', as: :unearth_treasure
 
-  resources :treasures, only: [:new, :create, :index, :show], path: ""
+  resources :comments, only: %w(new create show), defaults: { format: 'js' }
+
+  resources :treasures, only: %w(new create index show), path: ""
 end

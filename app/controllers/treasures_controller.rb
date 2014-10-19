@@ -11,6 +11,7 @@ class TreasuresController < ApplicationController
     @treasure = Treasure.new
   end
 
+  # step 1 of creation: validate treasure and then bury it in session
   def create
     refined_params = params.for(Treasure).refine
     @treasure = Treasure.new refined_params
@@ -22,6 +23,7 @@ class TreasuresController < ApplicationController
     end
   end
 
+  # step 2 of creation: ensure worthiness by authentication, dig in session, claim and save treasure
   def unearth_treasure
     @treasure = Treasure.new JSON.parse session[:hidden_treasure]
     @treasure.user = current_user
