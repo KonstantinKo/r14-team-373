@@ -17,7 +17,7 @@
               .tab-pane#github[class="#{'active' if f.object.github?}"]
                 = f.input :github_path, input_html: { class: "codepicker" }, label: "Find files on Github", placeholder: "my_user/my_repo/my_branch/Readme.txt"
               .tab-pane#code[class="#{'active' if !f.object.github?}"]
-          .col-md-6
+          .col-md-9
               = f.input :code, input_html: { class: "codeedit", rows: 15}
-          .col-md-6
+          .col-md-3
             = f.input :description, input_html: {rows: 15}

@@ -1,9 +1,9 @@
 = simple_form_for treasure do |f|
   .row
-    .col-md-6
+    .col-md-8
       = f.input :title, placeholder: 'Please enter a title...', label: false
       = f.input :description, as: :text, placeholder: '...and a description.', label: false, id: "treasure_description", input_html: { class: "collapse" }
-    .col-md-6
+    .col-md-4
       button.btn.btn-default.pull-right[type="button" data-toggle="collapse" data-target="#treasure_description"] Add Description
       ul#tags.form-group
       = f.hidden_field :tag_list, value: @treasure.tags_string
