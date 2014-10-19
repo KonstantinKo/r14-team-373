@@ -18,10 +18,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top
             i.fa.fa-sign-out
             span Sign out
         - else
-          li= link_to "/auth/github" do
+          li= link_to "#{ENV['HTTPS_URL']}/auth/github" do
             i.fa.fa-github>
             span Sign in with Github
-          li= link_to "/auth/heroku" do
+          li= link_to "#{ENV['HTTPS_URL']}/auth/heroku" do
             i.fa.icon-heroku>
             span Sign in with Heroku
           - unless Rails.env.production?
