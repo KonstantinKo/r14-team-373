@@ -18,3 +18,24 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require_tree .
+//= require highlight_js/highlight
+//= require highlight_js/languages/ruby
+//= require highlight_js/languages/bash
+//= require highlight_js/languages/coffeescript
+//= require highlight_js/languages/css
+//= require highlight_js/languages/http
+//= require highlight_js/languages/javascript
+//= require highlight_js/languages/json
+//= require highlight_js/languages/markdown
+//= require highlight_js/languages/nginx
+//= require highlight_js/languages/python
+//= require highlight_js/languages/sql
+//= require highlight_js/languages/xml
+
+hljs.initHighlightingOnLoad();
+
+$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});

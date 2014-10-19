@@ -102,6 +102,8 @@ GEM
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
     hashie (3.3.1)
+    highlight_js-rails (7.1.0)
+      rails (>= 3.1.1)
     hike (1.2.3)
     i18n (0.6.11)
     interception (0.5)
@@ -300,6 +302,7 @@ DEPENDENCIES
   faker
   font-awesome-rails
   friendly_id (>= 5.0.0)
+  highlight_js-rails
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

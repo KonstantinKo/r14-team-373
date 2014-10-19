@@ -2,6 +2,11 @@ h3= @treasure.title
 h4 Tags:
 p
   = @treasure.tags_string
+- @treasure.snippets.each do |snippet|
+  pre
+    code
+      == snippet.code
+
 
 h4 Comments
 p
