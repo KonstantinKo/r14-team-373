@@ -14,6 +14,6 @@ class TagsController < ApplicationController
     end
 
     def autocomplete_data(q)
-      autocomplete_query(q)["name"].first["options"].map{ |r| r["text"]}
+      autocomplete_query(q)["name"].first["options"].map{ |r| r["text"]} rescue []
     end
 end
