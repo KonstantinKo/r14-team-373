@@ -12,6 +12,20 @@ class TreasuresController < ApplicationController
     @treasure.snippets.build
   end
 
+  def edit
+    @treasure = current_user.treasures.where(slug: params[:id]).first
+    render :edit
+  end
+
+  def update
+    @treasure = current_user.treasures.where(slug: params[:id]).first
+    if @treasure.update(params.for(@treasure).refine)
+      redirect_to @treasure
+    else
+      render :edit
+    end
+  end
+
   # step 1 of creation: validate treasure and then bury it in session
   def create
     refined_params = params.for(Treasure).refine
