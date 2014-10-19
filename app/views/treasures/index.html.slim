@@ -26,7 +26,7 @@
             | of it's own?
             br
             br
-            = link_to "Create a Treasure", new_treasure_path, class: "btn btn-large btn-primary visible-xs-inline-block visible-sm-inline-block"
+            = link_to "Create a Treasure", "#{ENV['HTTPS_URL']}/new", class: "btn btn-large btn-primary visible-xs-inline-block visible-sm-inline-block"
       .col-md-4.visible-md.visible-lg
         = link_to "Create a Treasure", new_treasure_path, class: "btn btn-large btn-primary main-cta-button"
         / = simple_form_for Treasure.new do |f|
