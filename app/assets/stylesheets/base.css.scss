@@ -3,6 +3,10 @@
   background: asset-url('mapbg.png');
   padding-top: 110px;
 }
+.row.map-background2{
+  background: asset-url('mapbg.png') fixed;
+  padding-top: 110px;
+}
 
 .main-call-to-action {
   text-align: center;
@@ -20,6 +24,15 @@
   line-height: 17px;
   margin-bottom: 110px;
 }
+
+.map-background label {
+  font-weight: 500;
+  abbr {
+    display: none; // refactor
+  }
+}
+
+//
 
 .tag-list a {
   margin: 4px 4px 4px 0;
