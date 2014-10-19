@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20141019181258) do
     t.integer  "snippets_count", default: 0, null: false
     t.integer  "user_id"
     t.string   "slug"
+    t.integer  "votes_count"
   end
 
   create_table "users", force: true do |t|
@@ -95,6 +96,13 @@ ActiveRecord::Schema.define(version: 20141019181258) do
     t.string   "provider"
     t.string   "uid"
     t.string   "nickname"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "treasure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -24,5 +24,7 @@ Rails.application.routes.draw do
     resources :treasures, only: [:index]
   end
 
-  resources :treasures, only: %w(new create index show), path: ""
+  resources :treasures, only: %w(new create index show), path: "" do
+    resources :votes, only: %w(create)#, defaults: { format: 'js' }
+  end
 end
