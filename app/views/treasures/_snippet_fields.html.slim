@@ -2,19 +2,19 @@
   .row
     .col-md-12
       ul.nav.nav-tabs[role="tablist"]
-        li.active
+        li[class="#{'active' if f.object.github?}"]
           a[href="#github" role="tab" data-toggle="tab"] Import Github code
-        li
+        li[class="#{'active' if !f.object.github?}"]
           a[href="#code" role="tab" data-toggle="tab"] Code input
   .row
     .col-md-6
       .tab-content
-        .tab-pane.active#github
-          label.text.control-label Start typing: Username/Repo/file
-          input.form-control#codepicker[type="text"]
-          = f.input :code, input_html: { id: "onebox", rows: 15, class: "deactivatable"}, wrapper_html: { class: "collapse"}
-        .tab-pane#code
-          = f.input :code, input_html: {rows: 15, class: "deactivatable"}
+        .tab-pane#github[class="#{'active' if f.object.github?}"]
+          = f.input :github_path, input_html: { id: "codepicker" }, label: "Find files on Github", placeholder: "my_user/my_repo/my_branch/Readme.txt"
+
+        .tab-pane#code[class="#{'active' if !f.object.github?}"]
+
+        = f.input :code, input_html: { id: "onebox", rows: 15}
     .col-md-6
       = f.input :description, input_html: {rows: 15}
   .row
