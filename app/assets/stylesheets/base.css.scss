@@ -1,6 +1,24 @@
+// home cta
+.row.map-background {
+  background: asset-url('mapbg.png');
+  padding-top: 110px;
+}
+
 .main-call-to-action {
-  padding: 200px 0;
   text-align: center;
+
+  h2 {
+    margin-top: 0;
+    font-size: 35px;
+    line-height: 35px;
+    margin-bottom: 20px;
+  }
+}
+
+.cta-explanation {
+  font-size: 15px;
+  line-height: 17px;
+  margin-bottom: 110px;
 }
 
 .tag-list a {
@@ -48,7 +66,10 @@ ul.form-group li {
   display: inline;
 }
 
+// search
+
 .search-container {
+  margin-top: 20px;
   margin-left: ($grid-gutter-width / -2);
   margin-right: ($grid-gutter-width / -2);
 }
