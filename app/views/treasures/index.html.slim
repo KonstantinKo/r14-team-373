@@ -26,11 +26,12 @@
             | of it's own?
             br
             br
-            = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary visible-xs-inline-block visible-sm-inline-block"
+            = link_to "Create a Treasure", new_treasure_path, class: "btn btn-large btn-primary visible-xs-inline-block visible-sm-inline-block"
       .col-md-4.visible-md.visible-lg
-        = simple_form_for Treasure.new do |f|
-          = f.input :description, label: 'Give us a Github link to a file or just paste in code:'
-          = f.button :submit, value: 'Continue'
+        = link_to "Create a Treasure", new_treasure_path, class: "btn btn-large btn-primary main-cta-button"
+        / = simple_form_for Treasure.new do |f|
+        /   = f.input :description, label: 'Give us a Github link to a file or just paste in code:'
+        /   = f.button :submit, value: 'Continue'
 .search-container
   .col-md-9
     = render "search"

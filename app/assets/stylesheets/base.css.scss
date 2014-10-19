@@ -34,6 +34,13 @@
   }
 }
 
+.main-cta-button {
+  font-size: 34px;
+  position: relative;
+  left: 30px;
+  top: 100px;
+}
+
 .map-background label {
   font-weight: 500;
   abbr {
@@ -41,7 +48,7 @@
   }
 }
 .path-left-background, .path-right-background {
-  opacity: 0.03;
+  opacity: 0.06;
   position: absolute;
 }
 
