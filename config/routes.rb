@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
 
+  get '/unearth_treasure' => 'treasures#unearth_treasure', as: :unearth_treasure
+
   resources :treasures, only: [:new, :create, :index, :show], path: ""
 end
