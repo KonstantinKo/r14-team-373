@@ -11,7 +11,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         = image_tag "logo-transparent.png", alt: "treasures.io"
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li= link_to 'Create a new treasure', new_treasure_path
+        li= link_to 'Create Treasure', new_treasure_path
         - if user_signed_in?
           li= link_to "My Treasures", user_treasures_path(current_user)
 

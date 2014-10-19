@@ -4,6 +4,51 @@
   margin-bottom: 0;
 }
 
+// header buttons
+
+.navbar-inverse .navbar-nav {
+  margin-left: 30px;
+
+  & > li > a {
+    margin-left: 10px;
+    background: #f3eeee;
+    color: #422b2b;
+    position: relative;
+    top: 15px;
+    padding: 5px 10px;
+    border-radius: 15px;
+
+    &:hover {
+      background: #422b2b;
+      color: #f3eeee;
+    }
+  }
+  & > li > .dropdown-menu {
+    top: 45px;
+    border-radius: 15px;
+    padding: 0;
+
+    & > li > a {
+      background: #f3eeee;
+      color: #422b2b;
+    }
+
+    & > li > a:hover {
+      background: #422b2b;
+      color: #f3eeee;
+    }
+
+    & > li:first-child > a {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    & > li:last-child > a {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  }
+}
+
 // home cta
 .row.map-background {
   background: asset-url('mapbg.png');
