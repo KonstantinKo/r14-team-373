@@ -79,9 +79,12 @@ codepicker = ->
         container.find('.codeedit').html data
         container.find('.codeedit').parent().addClass('in')
         $(".treasure_snippets_code > textarea.text").each ->
-            CodeMirror.fromTextArea this,
+            c = CodeMirror.fromTextArea this,
                 lineNumbers: true,
                 tabSize: 2
+            c.on "change", (cm, change) ->
+              cm.save()
+
 
     else
       reopen = true
@@ -99,8 +102,12 @@ codepicker = ->
     if (e.which == 13)
       e.preventDefault();
       return false;
-  $(".treasure_snippets_code > textarea.text").each ->
-  		CodeMirror.fromTextArea this,	lineNumbers: true, tabSize: 2 if ($(this).siblings(".CodeMirror").length == 0)
+  $(".treasure_snippets_code > textarea.text").each () ->
+    textarea = $(this)
+    if ($(this).siblings(".CodeMirror").length == 0)
+      c = CodeMirror.fromTextArea this,	lineNumbers: true, tabSize: 2
+      c.on "change", (cm, change) ->
+        cm.save()
 
 
 
