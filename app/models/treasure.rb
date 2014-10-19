@@ -1,5 +1,10 @@
 class Treasure < ActiveRecord::Base
+  # Attrs
   attr_accessor :unearthing
+
+  # Slug
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   # Tagging
   acts_as_taggable

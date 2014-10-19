@@ -4,7 +4,7 @@ class TreasuresController < ApplicationController
   respond_to :html
 
   def show
-    @treasure = Treasure.find params[:id]
+    @treasure = Treasure.friendly.find params[:id]
   end
 
   def new

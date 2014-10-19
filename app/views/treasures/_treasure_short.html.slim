@@ -5,7 +5,7 @@
     | &emsp;
     i.fa.fa-smile-o>
     => 3
-  h4= treasure.title
+  h4= link_to treasure.title, treasure_path(treasure.slug || treasure.id)
   p= treasure.description
   ul.tag-list
     - treasure.tags.each do |tag|
