@@ -12,3 +12,10 @@ $nav-tabs-active-link-hover-border-color: lighten($btn-default-bg, 30%);
 
 $well-bg: white;
 $well-border: lighten($btn-default-bg, 30%);
+
+
+.btn.active:focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 0 !important;
+}
