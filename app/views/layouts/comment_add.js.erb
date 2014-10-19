@@ -1,1 +1,3 @@
 $("#comments").append("<li><%= escape_javascript(yield) %></li>");
+$('#new_comment').find("input[type=text], textarea").val("");
+$('#new_comment').find(".nested-fields").remove();
