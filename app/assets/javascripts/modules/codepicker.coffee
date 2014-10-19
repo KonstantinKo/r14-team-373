@@ -56,13 +56,15 @@ autocomplete_items = (query, cb)->
         typeahead_cb(query,cb,saved_tree[identifier])
 
 codepicker = ->
-  codepick = $('.codepicker').typeahead
+
+  codepick = $('.codepicker').not(".typeahead-loaded").typeahead
     hint: true,
     highlight: true,
     minLength: 1
   ,
     displayKey: 'value',
     source: autocomplete_items
+  $('.codepicker').addClass("typeahead-loaded")
 
   codepick.on "typeahead:selected" ,(e,suggest,s) ->
     container = $(e.target).closest(".nested-fields")
