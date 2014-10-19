@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
-  enum role: [:user, :admin]
-  after_initialize :set_default_role, :if => :new_record?
+  # Associations
+  has_many :treasures, inverse_of: :user
 
+  # Role concerns
+  enum role: [:user, :admin]
+  after_initialize if: :new_record? do
+    self.role = :user
+  end
+
+  # Methods
   def self.create_with_omniauth auth
-    puts auth
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
@@ -11,9 +17,4 @@ class User < ActiveRecord::Base
       user.nickname = auth['info']['nickname'] || auth['info']['name']
     end
   end
-
-  def set_default_role
-    self.role = :user
-  end
-
 end

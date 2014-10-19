@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018172823) do
+ActiveRecord::Schema.define(version: 20141019090511) do
 
   create_table "comments", force: true do |t|
     t.integer  "treasure_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141018172823) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "snippets_count", default: 0, null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
