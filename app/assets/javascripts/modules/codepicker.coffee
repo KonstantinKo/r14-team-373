@@ -3,6 +3,8 @@ saved_repos = {}
 saved_branches = {}
 saved_tree = {}
 
+reopen = false
+
 typeahead_cb = (q,cb,result) ->
   matches = []
 
@@ -16,6 +18,7 @@ typeahead_cb = (q,cb,result) ->
     # the typeahead jQuery plugin expects suggestions to a
     # JavaScript object, refer to typeahead docs for more info
     matches.push res  if substrRegex.test(res["value"])
+
   cb(matches)
 
 autocomplete_items = (query, cb)->
@@ -52,22 +55,37 @@ autocomplete_items = (query, cb)->
       $.getJSON "github/tree.json",{repo: repo, branch: branch, path: path}, (data) ->
         saved_tree[identifier] = data
         typeahead_cb(query,cb,saved_tree[identifier])
+
 codepicker = ->
-  codepick = $('#codepicker').typeahead({
+  codepick = $('#codepicker').typeahead
     hint: true,
     highlight: true,
     minLength: 1
-  },
-  {
+  ,
     displayKey: 'value',
     source: autocomplete_items
-  })
+
   codepick.on "typeahead:selected" ,(e,suggest,s) ->
-    if suggest["path"] && suggest["type"]== "file"
-      $.get "github/content.html", { repo: suggest["repo"], branch: suggest["branch"], path: suggest["path"] }, ( data ) ->
-        $('#onebox').html(data);
+    if suggest["path"] && suggest["type"] != "dir"
+      reopen = false
+      $.get "github/content.html",
+        repo: suggest["repo"]
+        branch: suggest["branch"]
+        path: suggest["path"]
+      , (data) ->
+        $('#onebox').html data
+    else
+      reopen = true
 
-
+  codepick.on "typeahead:closed", ->
+    if reopen
+      reopen = false
+      withSlash = codepick.typeahead('val') + '/'
+      codepick.typeahead('val', withSlash)
+      setTimeout ->
+        codepick.data('ttTypeahead').dropdown.update(withSlash)
+        codepick.data('ttTypeahead').dropdown.open()
+      , 100
 
 
 $(document).ready codepicker
