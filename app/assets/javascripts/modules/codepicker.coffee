@@ -76,7 +76,7 @@ codepicker = ->
         path: suggest["path"]
       , (data) ->
         $('.CodeMirror').remove()
-        container.find('.codeedit').html data
+        container.find('.codeedit').val data
         container.find('.codeedit').parent().addClass('in')
         $(".treasure_snippets_code > textarea.text").each ->
             c = CodeMirror.fromTextArea this,

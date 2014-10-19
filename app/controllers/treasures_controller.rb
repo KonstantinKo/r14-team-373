@@ -43,6 +43,7 @@ class TreasuresController < ApplicationController
     @treasure = Treasure.new JSON.parse session[:hidden_treasure]
     @treasure.user = current_user
     @treasure.unearthing = true
+    session[:hidden_treasure] = nil
     if @treasure.save
       redirect_to @treasure
     else

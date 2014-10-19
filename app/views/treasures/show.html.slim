@@ -5,8 +5,14 @@
         i.fa.fa-star-o.fa-2x.star-icon
     - else
       i.fa.fa-star.fa-2x.star-icon.pull-right
-    h3= @treasure.title
-    = @treasure.tags_string
+    h3
+      - if @treasure.user == current_user
+        => link_to edit_treasure_path(params[:id]) do
+          i.fa.fa-pencil
+      = @treasure.title
+    .tag-list
+      - @treasure.tags.each do |tag|
+        a.btn.btn-default.btn-sm= tag
 
 
 - @treasure.snippets.each do |snippet|
