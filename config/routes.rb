@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   get '/unearth_treasure' => 'treasures#unearth_treasure', as: :unearth_treasure
 
+  get '/github/tree', to: 'octokit#tree'
+  get '/github/repos', to: 'octokit#repos'
+  get '/github/branches', to: 'octokit#branches'
+
   resources :treasures, only: [:new, :create, :index, :show], path: ""
 end

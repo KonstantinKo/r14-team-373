@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
-
+gem 'bootstrap-typeahead-rails'
 gem 'bootstrap-sass'
 # bootswatch themes
 gem 'bootswatch-rails'
@@ -21,13 +21,14 @@ gem 'slim-rails'
 gem 'chewy'
 gem 'active_data'
 gem 'kaminari'
+gem 'onebox'
 
 gem 'therubyracer', :platform=>:ruby
 gem 'acts-as-taggable-on'
 gem 'arcane'
 gem 'omniauth-github'
 gem 'omniauth-heroku', '~> 0.2.0.pre'
-
+gem "octokit", "~> 3.0"
 
 group :development do
   gem 'better_errors'
