@@ -1,6 +1,6 @@
 class TreasuresController < ApplicationController
   after_action :set_cookie, only: [:index]
-  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :authenticate_user!, only: [:unearth_treasure]
   respond_to :html
 
   def show
@@ -12,13 +12,25 @@ class TreasuresController < ApplicationController
   end
 
   def create
-    @treasure = Treasure.new params.for(Treasure).refine
-    if @treasure.save
-      respond_with @treasure
+    refined_params = params.for(Treasure).refine
+    @treasure = Treasure.new refined_params
+    if @treasure.valid?
+      session[:hidden_treasure] = refined_params.to_json
+      redirect_to :unearth_treasure
     else
       render :new
     end
   end
+
+  def unearth_treasure
+    @treasure = Treasure.new JSON.parse session[:hidden_treasure]
+    if @treasure.save
+      redirect_to @treasure
+    else
+      render :new
+    end
+  end
+
   def index
     @search = TreasureSearch.new(params[:treasure_search])
     @treasures = @search.search.page(params[:page])
