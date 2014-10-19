@@ -15,9 +15,9 @@
           .col-md-12
             .tab-content
               .tab-pane#github[class="#{'active' if f.object.github?}"]
-                = f.input :github_path, input_html: { id: "codepicker" }, label: "Find files on Github", placeholder: "my_user/my_repo/my_branch/Readme.txt"
+                = f.input :github_path, input_html: { class: "codepicker" }, label: "Find files on Github", placeholder: "my_user/my_repo/my_branch/Readme.txt"
               .tab-pane#code[class="#{'active' if !f.object.github?}"]
           .col-md-6
-              = f.input :code, input_html: { id: "onebox", rows: 15}
+              = f.input :code, input_html: { class: "codeedit", rows: 15}
           .col-md-6
             = f.input :description, input_html: {rows: 15}

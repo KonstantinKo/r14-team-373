@@ -2,7 +2,6 @@
 saved_repos = {}
 saved_branches = {}
 saved_tree = {}
-
 reopen = false
 
 typeahead_cb = (q,cb,result) ->
@@ -57,7 +56,7 @@ autocomplete_items = (query, cb)->
         typeahead_cb(query,cb,saved_tree[identifier])
 
 codepicker = ->
-  codepick = $('#codepicker').typeahead
+  codepick = $('.codepicker').typeahead
     hint: true,
     highlight: true,
     minLength: 1
@@ -66,6 +65,7 @@ codepicker = ->
     source: autocomplete_items
 
   codepick.on "typeahead:selected" ,(e,suggest,s) ->
+    container = $(e.target).closest(".nested-fields")
     if suggest["path"] && suggest["type"] != "dir"
       reopen = false
       $.get "github/content.html",
@@ -73,24 +73,33 @@ codepicker = ->
         branch: suggest["branch"]
         path: suggest["path"]
       , (data) ->
-        $('#onebox').html data
-        $('#onebox').parent().addClass('in')
+        $('.CodeMirror').remove()
+        container.find('.codeedit').html data
+        container.find('.codeedit').parent().addClass('in')
+        $(".treasure_snippets_code > textarea.text").each ->
+            CodeMirror.fromTextArea this,
+                lineNumbers: true,
+                tabSize: 2
+
     else
       reopen = true
 
   codepick.on "typeahead:closed", ->
     if reopen
       reopen = false
-      withSlash = codepick.typeahead('val') + '/'
-      codepick.typeahead('val', withSlash)
+      withSlash = $(this).typeahead('val') + '/'
+      $(this).typeahead('val', withSlash)
       setTimeout ->
-        codepick.data('ttTypeahead').dropdown.update(withSlash)
-        codepick.data('ttTypeahead').dropdown.open()
+        $(this).data('ttTypeahead').dropdown.update(withSlash)
+        $(this).data('ttTypeahead').dropdown.open()
       , 100
-  $('#codepicker').keypress (e)->
-    if (e.which == 13) 
+  $('.codepicker').keypress (e)->
+    if (e.which == 13)
       e.preventDefault();
       return false;
+  $(".treasure_snippets_code > textarea.text").each ->
+  		CodeMirror.fromTextArea this,	lineNumbers: true, tabSize: 2 if ($(this).siblings(".CodeMirror").length == 0)
+
 
 
 

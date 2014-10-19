@@ -31,6 +31,7 @@
 //= require highlight_js/languages/python
 //= require highlight_js/languages/sql
 //= require highlight_js/languages/xml
+//= require codemirror
 
 hljs.initHighlightingOnLoad();
 
