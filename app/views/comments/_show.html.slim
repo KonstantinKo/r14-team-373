@@ -1,1 +1,3 @@
 .panel= comment.content
+- comment.snippets.each do |snippet|
+  = render "/treasures/snippet", snippet: snippet

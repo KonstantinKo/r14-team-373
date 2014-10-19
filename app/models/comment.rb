@@ -6,4 +6,5 @@ class Comment < ActiveRecord::Base
 
   # Validations
   validates :content, presence: true, uniqueness: { scope: :treasure }
+  accepts_nested_attributes_for :snippets, :reject_if => :all_blank, :allow_destroy => true
 end
