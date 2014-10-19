@@ -27,7 +27,7 @@ class TreasureSearch
   end
 
   def query_string
-    index.query(query_string: {fields: [:title, :description], query: query, default_operator: 'and'}) if query?
+    index.query(query_string: {fields: [:title, :description, :snippets_descriptions, :snippets_codes], query: query, default_operator: 'and'}) if query?
   end
 
   def user_id_filter
