@@ -1,7 +1,7 @@
 .row
   .col-md-12
     - if current_user && !current_user.voted_treasures.include?(@treasure)
-      = link_to treasure_votes_path(treasure_id: @treasure.id), method: :POST, remote: true, class: "pull-right", title: "Favorite this Treasure", html: { id: 'new_vote' } do
+      = link_to treasure_votes_path(treasure_id: @treasure.id), method: :POST, remote: true, class: "pull-right", title: "Favorite this Treasure", id: 'new_vote' do
         i.fa.fa-star-o.fa-2x.star-icon
     - else
       i.fa.fa-star.fa-2x.star-icon.pull-right

@@ -1,9 +1,7 @@
 - if user_signed_in?
   = simple_form_for comment, remote: true do |f|
     = f.hidden_field :treasure_id, value: treasure.id
-    /= f.input :email unless current_user
     = f.input :content, label: false
-    /= f.input :notify, label: 'Notify me about new comments to this treasure '
     = f.simple_fields_for :snippets do |snippet|
       = render 'snippet_fields', :f => snippet
     .links

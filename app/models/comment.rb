@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
   belongs_to :treasure, inverse_of: :comments
 
   # Validations
-  validates :content, presence: true, uniqueness: { scope: :treasure }
+  validates :content, presence: true
   accepts_nested_attributes_for :snippets, :reject_if => :all_blank, :allow_destroy => true
 end
