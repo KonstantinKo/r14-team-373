@@ -1,12 +1,14 @@
-.well.well-sm
-  div.pull-right.icons
-    i.fa.fa-code>
-    => treasure.snippets_count
-    | &emsp;
-    i.fa.fa-star-o>
-    => treasure.votes_count
-  h4= link_to treasure.title, treasure_path(treasure.slug || treasure.id)
-  p= treasure.description
-  ul.tag-list
-    - treasure.tags.each do |tag|
-      li.btn.btn-default.btn-xs= tag
+
+= link_to treasure_path(treasure.slug || treasure.id), class: 'treasure_link_no_hover' do
+  .well.well-sm
+    div.pull-right.icons
+      i.fa.fa-code>
+      => treasure.snippets_count
+      | &emsp;
+      i.fa.fa-star-o>
+      => treasure.votes_count
+    h4= treasure.title
+    p= treasure.description
+    ul.tag-list
+      - treasure.tags.each do |tag|
+        li.btn.btn-default.btn-xs= tag
