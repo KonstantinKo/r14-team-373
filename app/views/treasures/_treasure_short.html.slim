@@ -4,7 +4,7 @@
     => treasure.snippets_count
     | &emsp;
     i.fa.fa-smile-o>
-    => 3
+    => treasure.votes_count
   h4= link_to treasure.title, treasure_path(treasure.slug || treasure.id)
   p= treasure.description
   ul.tag-list

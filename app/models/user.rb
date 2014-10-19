@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   # Associations
   has_many :treasures, inverse_of: :user
   has_many :comments, inverse_of: :user
+  has_many :votes
+  has_many :voted_treasures, through: :votes, source: :treasure
 
   # Role concerns
   enum role: [:user, :admin]
