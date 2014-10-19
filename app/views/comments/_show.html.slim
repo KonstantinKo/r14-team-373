@@ -1,3 +1,11 @@
-.panel= comment.content
-- comment.snippets.each do |snippet|
-  = render "/treasures/snippet", snippet: snippet
+.panel.panel-default
+  .panel-heading
+    h5
+      => comment.user.nickname.present? ? comment.user.nickname : "Someone"
+      | wrote
+      =<> time_ago_in_words(comment.created_at)
+      | ago
+  .panel-body
+    = comment.content
+    - comment.snippets.each do |snippet|
+      = render "/treasures/snippet", snippet: snippet
