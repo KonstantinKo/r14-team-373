@@ -7,8 +7,9 @@
     = f.simple_fields_for :snippets do |snippet|
       = render 'snippet_fields', :f => snippet
     .links
-      = link_to_add_association 'Add Code', f, :snippets , class: 'btn btn-default'
-    = f.button :submit
+      = link_to_add_association f, :snippets, title: "Add some code to your comment" do
+        i.fa.fa-code.fa-2x.pull-right
+      = f.button :submit
 - else
   p Please sign in to add a comment
   = link_to "#{ENV['HTTPS_URL']}/auth/github", class: "btn btn-default login-links" do
