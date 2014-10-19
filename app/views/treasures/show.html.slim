@@ -10,7 +10,9 @@
         => link_to edit_treasure_path(params[:id]) do
           i.fa.fa-pencil
       = @treasure.title
-    = @treasure.tags_string
+    .tag-list
+      - @treasure.tags.each do |tag|
+        a.btn.btn-default.btn-sm= tag
 
 
 - @treasure.snippets.each do |snippet|
