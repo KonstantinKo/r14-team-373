@@ -6,6 +6,4 @@ class Comment < ActiveRecord::Base
 
   # Validations
   validates :content, presence: true, uniqueness: { scope: :treasure }
-  validates :email, format: /\A.+@.+\..+\z/, allow_blank: true
-  validates :email, presence: true, unless: -> { user }
 end

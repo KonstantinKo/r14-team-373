@@ -1,6 +1,15 @@
-= simple_form_for comment, remote: true do |f|
-  = f.hidden_field :treasure_id, value: treasure.id
-  = f.input :email unless current_user
-  = f.input :content
-  /= f.input :notify, label: 'Notify me about new comments to this treasure '
-  = f.button :submit
+- if user_signed_in?
+  = simple_form_for comment, remote: true do |f|
+    = f.hidden_field :treasure_id, value: treasure.id
+    = f.input :email unless current_user
+    = f.input :content
+    /= f.input :notify, label: 'Notify me about new comments to this treasure '
+    = f.button :submit
+- else
+  p Please sign in to add a comment
+  = link_to "#{ENV['HTTPS_URL']}/auth/github", class: "btn btn-default login-links" do
+    i.fa.fa-github>
+    span Sign in with Github
+  = link_to "#{ENV['HTTPS_URL']}/auth/heroku", class: "btn btn-default login-links" do
+    i.fa.icon-heroku>
+    span Sign in with Heroku
