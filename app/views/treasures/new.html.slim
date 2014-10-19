@@ -5,14 +5,13 @@ h3 Create a new treasure
     .col-md-6
       = f.input :title, placeholder: 'Please enter a title...', label: false
       = f.input :description, as: :text, placeholder: '...and a description.', label: false, id: "treasure_description", input_html: { class: "collapse" }
-
     .col-md-6
       button.btn.btn-default.pull-right[type="button" data-toggle="collapse" data-target="#treasure_description"] Add Description
       ul#tags.form-group
       = f.hidden_field :tag_list, value: @treasure.tags_string
-  = f.simple_fields_for :snippets do |snippet|
-    = render 'snippet_fields', :f => snippet
-  .links
-    = link_to_add_association 'Add Code', f, :snippets , class: 'btn btn-default'
-
-  = f.button :submit, value: 'Save'
+    = f.simple_fields_for :snippets do |snippet|
+      = render 'snippet_fields', :f => snippet
+      .links
+        = link_to_add_association f, :snippets, title: "Add another code snippet"  do
+          i.fa.fa-plus.fa-2x
+        = f.button :submit, value: 'Save', class: "pull-right"
