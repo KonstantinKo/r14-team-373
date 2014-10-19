@@ -1,7 +1,38 @@
-.main-call-to-action {
-  padding: 200px 0;
-  text-align: center;
+// home cta
+.row.map-background {
+  background: asset-url('mapbg.png');
+  padding-top: 110px;
 }
+.row.map-background2{
+  background: asset-url('mapbg.png') fixed;
+  padding-top: 110px;
+}
+
+.main-call-to-action {
+  text-align: center;
+
+  h2 {
+    margin-top: 0;
+    font-size: 35px;
+    line-height: 35px;
+    margin-bottom: 20px;
+  }
+}
+
+.cta-explanation {
+  font-size: 15px;
+  line-height: 17px;
+  margin-bottom: 110px;
+}
+
+.map-background label {
+  font-weight: 500;
+  abbr {
+    display: none; // refactor
+  }
+}
+
+//
 
 .tag-list a {
   margin: 4px 4px 4px 0;
@@ -48,7 +79,10 @@ ul.form-group li {
   display: inline;
 }
 
+// search
+
 .search-container {
+  margin-top: 20px;
   margin-left: ($grid-gutter-width / -2);
   margin-right: ($grid-gutter-width / -2);
 }

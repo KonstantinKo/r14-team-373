@@ -12,6 +12,7 @@ html
   body
     header
       == render 'layouts/navigation'
+    = content_for :below_header
     main[role="main"]
       .container
         == render 'layouts/messages'
