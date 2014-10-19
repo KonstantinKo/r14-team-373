@@ -78,12 +78,12 @@ ActiveRecord::Schema.define(version: 20141019190407) do
 
   create_table "treasures", force: true do |t|
     t.string   "title"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "snippets_count", default: 0, null: false
     t.integer  "user_id"
     t.string   "slug"
+    t.text     "description"
     t.integer  "votes_count",    default: 0
     t.integer  "comments_count"
   end
