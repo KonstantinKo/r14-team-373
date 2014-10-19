@@ -9,6 +9,12 @@ FactoryGirl.define do
         FactoryGirl.create_list(:comment, 15, treasure: treasure, user_id: User.first.id)
       end
     end
+
+    trait :with_snippets do
+       after(:create) do |treasure|
+        FactoryGirl.create_list(:snippet, 3, user_id: User.first.id)
+      end
+    end
   end
 
 end
