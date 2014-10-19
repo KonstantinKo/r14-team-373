@@ -6,4 +6,6 @@ class Vote < ActiveRecord::Base
   # Validations
   validates :treasure, uniqueness: { scope: :user }
   validates :user, uniqueness: { scope: :treasure }
+
+  update_index 'treasures#treasure', :treasure 
 end
