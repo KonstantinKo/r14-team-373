@@ -83,6 +83,7 @@ codepicker = ->
                 lineNumbers: true,
                 tabSize: 2
             $(".CodeMirror").addClass("text optional form-control")
+            c.setSize(null, 490)
             c.on "change", (cm, change) ->
               cm.save()
 
@@ -108,6 +109,7 @@ codepicker = ->
     textarea = $(this)
     if ($(this).siblings(".CodeMirror").length == 0)
       c = CodeMirror.fromTextArea this,	lineNumbers: true, tabSize: 2
+      c.setSize(null, 490)
       $(".CodeMirror").addClass("text optional form-control")
       c.on "change", (cm, change) ->
         cm.save()
