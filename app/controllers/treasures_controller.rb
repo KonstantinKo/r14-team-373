@@ -9,6 +9,7 @@ class TreasuresController < ApplicationController
 
   def new
     @treasure = Treasure.new
+    @treasure.snippets.build
   end
 
   # step 1 of creation: validate treasure and then bury it in session
