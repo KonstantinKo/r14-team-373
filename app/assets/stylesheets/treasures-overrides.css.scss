@@ -7,11 +7,6 @@ $state-success-border: $green;
 
 $btn-default-bg: #437477;
 $input-border: lighten($btn-default-bg, 30%);
-$nav-tabs-border-color: lighten($btn-default-bg, 30%);
-$nav-tabs-active-link-hover-border-color: lighten($btn-default-bg, 30%);
-
-$well-bg: white;
-$well-border: lighten($btn-default-bg, 30%);
 
 
 .btn.active:focus,
@@ -19,3 +14,9 @@ $well-border: lighten($btn-default-bg, 30%);
 .btn:focus {
   outline: 0 !important;
 }
+
+$nav-tabs-border-color: #eeeeee;
+$nav-tabs-active-link-hover-border-color: #eeeeee;
+$nav-tabs-active-link-hover-bg: #eee;
+$well-bg: #eeeeee;
+$well-border: #eeeeee;
