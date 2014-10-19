@@ -87,6 +87,13 @@ codepicker = ->
         codepick.data('ttTypeahead').dropdown.update(withSlash)
         codepick.data('ttTypeahead').dropdown.open()
       , 100
+  $('#codepicker').keypress (e)->
+    if (e.which == 13) 
+      e.preventDefault();
+      return false;
+
+
+
 
 
 $(document).ready codepicker
