@@ -87,11 +87,11 @@ codepicker = ->
   codepick.on "typeahead:closed", ->
     if reopen
       reopen = false
-      withSlash = codepick.typeahead('val') + '/'
-      codepick.typeahead('val', withSlash)
+      withSlash = $(this).typeahead('val') + '/'
+      $(this).typeahead('val', withSlash)
       setTimeout ->
-        codepick.data('ttTypeahead').dropdown.update(withSlash)
-        codepick.data('ttTypeahead').dropdown.open()
+        $(this).data('ttTypeahead').dropdown.update(withSlash)
+        $(this).data('ttTypeahead').dropdown.open()
       , 100
   $('.codepicker').keypress (e)->
     if (e.which == 13)
