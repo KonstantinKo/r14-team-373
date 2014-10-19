@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019113400) do
+ActiveRecord::Schema.define(version: 20141019141248) do
 
   create_table "comments", force: true do |t|
     t.integer  "treasure_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141019113400) do
     t.text     "code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   create_table "taggings", force: true do |t|
@@ -67,12 +68,12 @@ ActiveRecord::Schema.define(version: 20141019113400) do
 
   create_table "treasures", force: true do |t|
     t.string   "title"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "snippets_count", default: 0, null: false
     t.integer  "user_id"
     t.string   "slug"
+    t.text     "description"
   end
 
   create_table "users", force: true do |t|

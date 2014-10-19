@@ -22,12 +22,11 @@
           br
           strong> become a lib
           | of it's own?
-        /= link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary"
+        = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary"
       .col-md-4.col-md-offset-1
         = simple_form_for Treasure.new do |f|
           = f.input :description, label: 'Give us a Github link to a file or just paste in code:'
           = f.button :submit, value: 'Continue'
-
 .search-container
   .col-md-9
     = render "search"
