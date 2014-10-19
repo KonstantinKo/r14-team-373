@@ -36,7 +36,7 @@ class TreasuresController < ApplicationController
   end
 
   def index
-    @search = TreasureSearch.new(params[:treasure_search])
+    @search = TreasureSearch.new(search_params)
     @treasures = @search.search.page(params[:page])
   end
 
@@ -46,4 +46,9 @@ class TreasuresController < ApplicationController
       cookies[:visited_treasures_io] = true
     end
 
+    def search_params
+      result = params[:treasure_search] || {}
+      result.merge!({user_id: params[:user_id].to_i}) if params[:user_id]
+      result
+     end
 end

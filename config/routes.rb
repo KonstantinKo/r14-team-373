@@ -14,5 +14,9 @@ Rails.application.routes.draw do
 
   resources :comments, only: %w(new create show), defaults: { format: 'js' }
 
+  resources :users, only: [] do
+    resources :treasures, only: [:index]
+  end
+
   resources :treasures, only: %w(new create index show), path: ""
 end

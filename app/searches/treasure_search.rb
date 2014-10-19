@@ -6,6 +6,7 @@ class TreasureSearch
   attribute :query, type: String
   attribute :num_tags, type: Integer
   attribute :tags, mode: :arrayed, type: Array, normalize: ->(value) { value.reject(&:blank?) }
+  attribute :user_id, type: Integer
 
   # This accessor is for interface. It will have only one text field
   # for comma-separated tags input.
@@ -22,11 +23,15 @@ class TreasureSearch
   end
 
   def search
-    @search ||= fresh? ? [all,tags_facets].reduce(:merge) : [query_string, tags_filter,tags_facets].compact.reduce(:merge)
+    @search ||= fresh? ? [all,tags_facets].reduce(:merge) : [query_string, user_id_filter, tags_filter,tags_facets].compact.reduce(:merge)
   end
 
   def query_string
     index.query(query_string: {fields: [:title, :description], query: query, default_operator: 'and'}) if query?
+  end
+
+  def user_id_filter
+    index.filter(term: {user_id: user_id}) if user_id?
   end
 
   def tags_filter

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :treasure do
-    title { Faker::Lorem.word }
+    sequence(:title) { |n| "#{Faker::Lorem.word}-#{n}" }
     description { Faker::Lorem.paragraph }
     tag_list { Faker::Lorem.words.join(",") }
   end

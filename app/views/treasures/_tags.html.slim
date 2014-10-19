@@ -1,5 +1,5 @@
 .tag-list
   - @search.available_tags.each do |tag|
-    a.btn.btn-default.btn-sm> class="#{@search.tags && @search.tags.include?(tag['term']) ? 'active' : ''}" href="#{treasures_path(treasure_search: @search.toggle(tag['term']))}"
+    a.btn.btn-default.btn-sm> class="#{@search.tags && @search.tags.include?(tag['term']) ? 'active' : ''}" href="#{original_path(tag, @search, params)}"
       = tag["term"]
       span.badge=< tag["count"]
