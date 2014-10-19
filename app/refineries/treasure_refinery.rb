@@ -2,9 +2,9 @@ class TreasureRefinery < Arcane::Refinery
   def create
     [
       :title, :description, :tag_list,
-      snippet_attributes: [
-        :id, :description, :code, :url, :_destroy
-      ] 
+      snippets_attributes: [
+        :id, :description, :code, :url, :_destroy, :github_path
+      ]
     ]
   end
 end

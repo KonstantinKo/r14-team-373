@@ -27,6 +27,10 @@ class Treasure < ActiveRecord::Base
 
   # Methods
 
+  def snippets_attributes
+    binding.pry
+  end
+  
   def tags_string
     tag_list.join(', ')
   end
