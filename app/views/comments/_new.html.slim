@@ -3,7 +3,7 @@
     = f.hidden_field :treasure_id, value: treasure.id
     = f.input :content, label: false
     = f.simple_fields_for :snippets do |snippet|
-      = render 'snippet_fields', :f => snippet
+      = render '/treasures/snippet_fields', :f => snippet
     .links
       = link_to_add_association f, :snippets, title: "Add some code to your comment" do
         i.fa.fa-code.fa-2x.pull-right

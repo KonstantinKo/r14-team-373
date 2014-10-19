@@ -8,7 +8,7 @@
       ul#tags.form-group
       = f.hidden_field :tag_list, value: @treasure.tags_string
     = f.simple_fields_for :snippets do |snippet|
-      = render 'snippet_fields', :f => snippet
+      = render '/treasures/snippet_fields', :f => snippet
       .links
         = link_to_add_association f, :snippets, title: "Add another code snippet"  do
           i.fa.fa-plus.fa-2x
