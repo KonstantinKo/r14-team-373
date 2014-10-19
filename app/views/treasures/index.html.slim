@@ -1,29 +1,33 @@
 - unless false #cookies[:visited_treasures_io]
   -content_for :below_header do
     .row.map-background
-      .col-md-5.col-md-offset-1.main-call-to-action
-        h2
-          | Find new / share your
-          br
-          | code treasures!
-        p.cta-explanation.col-xs-6
-          | You want to
-          strong< find existing
-          br
-          strong> code treasures
-          | to help
-          br
-          | with your current project?
-        p.cta-explanation.col-xs-6
-          | You've got a
-          strong<> piece of code
-          br
-          | lying around that could
-          br
-          strong> become a lib
-          | of it's own?
-        = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary"
-      .col-md-4.col-md-offset-1
+      .path-left-background.hidden-xs
+      .path-right-background.visible-md.visible-lg
+      .col-md-6.col-md-offset-1.main-call-to-action
+        .col-sm-6.hidden-xs
+          h2 Find Treasures
+          p.cta-explanation
+            | You want to
+            strong< find existing
+            br
+            strong> code treasures
+            | to help
+            br
+            | with your current project?
+        .col-xs-12.col-sm-6
+          h2 Share Treasures
+          p.cta-explanation
+            | You've got a
+            strong<> piece of code
+            br
+            | lying around that could
+            br
+            strong> become a lib
+            | of it's own?
+            br
+            br
+            = link_to "Create a treasure", new_treasure_path, class: "btn btn-large btn-primary visible-xs-inline-block visible-sm-inline-block"
+      .col-md-4.visible-md.visible-lg
         = simple_form_for Treasure.new do |f|
           = f.input :description, label: 'Give us a Github link to a file or just paste in code:'
           = f.button :submit, value: 'Continue'

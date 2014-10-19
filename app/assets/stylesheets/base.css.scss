@@ -28,7 +28,10 @@
 .cta-explanation {
   font-size: 15px;
   line-height: 17px;
-  margin-bottom: 110px;
+  margin-bottom: 70px;
+  @media only screen and (min-width: 992px) {
+    margin-bottom: 110px;
+  }
 }
 
 .map-background label {
@@ -36,6 +39,26 @@
   abbr {
     display: none; // refactor
   }
+}
+.path-left-background, .path-right-background {
+  opacity: 0.05;
+  position: absolute;
+}
+
+.path-left-background {
+  background: asset-url('pathl.png');
+  width: 184px;
+  height: 248px;
+  left: 18%; //270px;
+  top: 195px;
+}
+
+.path-right-background {
+  background: asset-url('pathr.png');
+  width: 354px;
+  height: 280px;
+  left: 38%;
+  top: 80px;
 }
 
 //
