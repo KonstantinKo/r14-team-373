@@ -13,5 +13,6 @@ h3 Create a new treasure
   = f.simple_fields_for :snippets do |snippet|
     = render 'snippet_fields', :f => snippet
   .links
-    = link_to_add_association 'add snippet', f, :snippets
-  = f.submit :submit, value: 'OK'
+    = link_to_add_association 'Add Code', f, :snippets , class: 'btn btn-default'
+
+  = f.button :submit, value: 'Save'
