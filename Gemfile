@@ -28,7 +28,9 @@ gem 'acts-as-taggable-on'
 gem 'arcane'
 gem 'omniauth-github'
 gem 'omniauth-heroku', '~> 0.2.0.pre'
+
 gem "octokit", "~> 3.0"
+gem 'friendly_id', '>= 5.0.0'
 
 group :development do
   gem 'better_errors'

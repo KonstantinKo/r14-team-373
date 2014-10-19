@@ -1,7 +1,12 @@
 h3= @treasure.title
-h4 Description:
-p
-  = @treasure.description
 h4 Tags:
 p
   = @treasure.tags_string
+
+h4 Comments
+p
+  = render 'comments/new', treasure: @treasure, comment: Comment.new
+
+ul#comments
+  - @treasure.comments.each do |comment|
+    li= render 'comments/show', comment: comment
