@@ -7,7 +7,7 @@ h3 Create a new treasure
       = f.input :description, as: :text, placeholder: '...and a description.', label: false, id: "treasure_description", input_html: { class: "collapse" }
 
     .col-md-6
-      button.btn.pull-right[type="button" data-toggle="collapse" data-target="#treasure_description"] Add Description
+      button.btn.btn-default.pull-right[type="button" data-toggle="collapse" data-target="#treasure_description"] Add Description
       ul#tags.form-group
       = f.hidden_field :tag_list, value: @treasure.tags_string
   = f.simple_fields_for :snippets do |snippet|

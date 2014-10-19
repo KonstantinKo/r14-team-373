@@ -1,22 +1,23 @@
 .nested-fields
   .row
     .col-md-12
+      = link_to_remove_association f, class: 'pull-right', title: "Remove this code snippet" do
+        i.fa.fa-times.fa-2x
       ul.nav.nav-tabs[role="tablist"]
         li[class="#{'active' if f.object.github?}"]
           a[href="#github" role="tab" data-toggle="tab"] Import Github code
         li[class="#{'active' if !f.object.github?}"]
           a[href="#code" role="tab" data-toggle="tab"] Code input
-  .row
-    .col-md-6
-      .tab-content
-        .tab-pane#github[class="#{'active' if f.object.github?}"]
-          = f.input :github_path, input_html: { id: "codepicker" }, label: "Find files on Github", placeholder: "my_user/my_repo/my_branch/Readme.txt"
-
-        .tab-pane#code[class="#{'active' if !f.object.github?}"]
-
-        = f.input :code, input_html: { id: "onebox", rows: 15}
-    .col-md-6
-      = f.input :description, input_html: {rows: 15}
-  .row
+  .row.nav-content
     .col-md-12
-      = link_to_remove_association "Remove Snippet", f, class: 'btn btn-default' 
+      .well.nav-panes
+        .row
+          .col-md-12
+            .tab-content
+              .tab-pane#github[class="#{'active' if f.object.github?}"]
+                = f.input :github_path, input_html: { id: "codepicker" }, label: "Find files on Github", placeholder: "my_user/my_repo/my_branch/Readme.txt"
+              .tab-pane#code[class="#{'active' if !f.object.github?}"]
+          .col-md-6
+              = f.input :code, input_html: { id: "onebox", rows: 15}
+          .col-md-6
+            = f.input :description, input_html: {rows: 15}
