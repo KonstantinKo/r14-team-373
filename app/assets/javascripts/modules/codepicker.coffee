@@ -63,8 +63,9 @@ codepicker = ->
     source: autocomplete_items
   })
   codepick.on "typeahead:selected" ,(e,suggest,s) ->
-    if suggest["url"] && suggest["type"]!= "dir"
-      alert(suggest['url'])
+    if suggest["path"] && suggest["type"]== "file"
+      $.get "github/content.html", { repo: suggest["repo"], branch: suggest["branch"], path: suggest["path"] }, ( data ) ->
+        $('#onebox').html(data);
 
 
 

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/github/tree', to: 'octokit#tree'
   get '/github/repos', to: 'octokit#repos'
   get '/github/branches', to: 'octokit#branches'
+  get '/github/content', to: 'octokit#content'
 
   resources :comments, only: %w(new create show), defaults: { format: 'js' }
 

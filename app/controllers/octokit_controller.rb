@@ -20,9 +20,18 @@ class OctokitController < ApplicationController
                     path: params[:path]).map{ |t| {
                       value: "#{params[:repo]}/#{params[:branch]}/#{t[:path]}",
                       type: t[:type] ,
-                      url: t[:html_url]} }
+                      repo: params[:repo],
+                      branch: params[:branch],
+                      path: t[:path]} }
       end
     end
   end
-  
+
+  def content
+    respond_to do |format|
+      format.html { render text: Base64.decode64(Octokit.contents( params[:repo],
+                  ref: params[:branch],
+                  path: params[:path]).content) }
+    end
+  end
 end
