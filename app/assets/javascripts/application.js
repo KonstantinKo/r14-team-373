@@ -17,4 +17,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-typeahead-rails
+//= require cocoon
 //= require_tree .
