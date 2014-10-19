@@ -5,9 +5,9 @@
 
     - if current_user && !current_user.voted_treasures.include?(@treasure)
       = button_to treasure_votes_path(treasure_id: @treasure.id), method: :POST, remote: true, class: 'btn btn-default', form: { id: 'new_vote' } do
-        i.fa.fa-smile-o
+        i.fa.fa-star-o
     - else
-      i.fa.fa-smile-o
+      i.fa.fa-star
 - @treasure.snippets.each do |snippet|
   = render "snippet", snippet: snippet
 
