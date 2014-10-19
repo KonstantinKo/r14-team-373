@@ -94,9 +94,10 @@ codepicker = ->
       reopen = false
       withSlash = $(this).typeahead('val') + '/'
       $(this).typeahead('val', withSlash)
+      $that = $(this)
       setTimeout ->
-        $(this).data('ttTypeahead').dropdown.update(withSlash)
-        $(this).data('ttTypeahead').dropdown.open()
+        $that.data('ttTypeahead').dropdown.update(withSlash)
+        $that.data('ttTypeahead').dropdown.open()
       , 100
   $('.codepicker').keypress (e)->
     if (e.which == 13)
