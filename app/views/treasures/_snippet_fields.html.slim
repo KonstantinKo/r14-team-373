@@ -1,2 +1,22 @@
-= text_field_tag 'name','' , id: 'codepicker'
-#onebox
+.nested-fields
+  .row
+    .col-md-12
+      ul.nav.nav-tabs[role="tablist"]
+        li.active
+          a[href="#github" role="tab" data-toggle="tab"] Import Github code
+        li
+          a[href="#code" role="tab" data-toggle="tab"] Code input
+  .row
+    .col-md-6
+      .tab-content
+        .tab-pane.active#github
+          label.text.control-label Start typing: Username/Repo/file
+          input.form-control#codepicker[type="text"]
+          = f.input :code, input_html: { id: "onebox", rows: 15, class: "deactivatable"}, wrapper_html: { class: "collapse"}
+        .tab-pane#code
+          = f.input :code, input_html: {rows: 15, class: "deactivatable"}
+    .col-md-6
+      = f.input :description, input_html: {rows: 15}
+  .row
+    .col-md-12
+      = link_to_remove_association "Remove Snippet", f

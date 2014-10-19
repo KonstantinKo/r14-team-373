@@ -74,6 +74,7 @@ codepicker = ->
         path: suggest["path"]
       , (data) ->
         $('#onebox').html data
+        $('#onebox').parent().addClass('in')
     else
       reopen = true
 
@@ -90,3 +91,4 @@ codepicker = ->
 
 $(document).ready codepicker
 $(document).on 'page:load', codepicker
+$(document).on 'cocoon:after-insert', codepicker

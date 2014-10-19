@@ -17,6 +17,8 @@ gem 'bootswatch-rails'
 gem "font-awesome-rails"
 gem 'pundit'
 gem 'simple_form', '~> 3.1.0.rc1'
+gem "cocoon", '~> 1.2.0'
+
 gem 'slim-rails'
 gem 'chewy'
 gem 'active_data'

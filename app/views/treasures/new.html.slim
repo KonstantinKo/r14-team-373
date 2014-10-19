@@ -1,12 +1,17 @@
 h3 Create a new treasure
 
 = simple_form_for @treasure do |f|
-  .col-xs-6
-    = f.input :title, placeholder: 'Please enter a title...', label: false
-    = f.input :description, as: :text, placeholder: '...and a description.', label: false
-    = f.button :submit, value: 'OK'
+  .row
+    .col-md-6
+      = f.input :title, placeholder: 'Please enter a title...', label: false
+      = f.input :description, as: :text, placeholder: '...and a description.', label: false, id: "treasure_description", input_html: { class: "collapse" }
 
-  .col-xs-6
-    ul#tags.form-group
-    = f.hidden_field :tag_list, value: @treasure.tags_string
-    = render 'snippet_fields', f: f
+    .col-md-6
+      button.btn.pull-right[type="button" data-toggle="collapse" data-target="#treasure_description"] Add Description
+      ul#tags.form-group
+      = f.hidden_field :tag_list, value: @treasure.tags_string
+  = f.simple_fields_for :snippets do |snippet|
+    = render 'snippet_fields', :f => snippet
+  .links
+    = link_to_add_association 'add snippet', f, :snippets
+  = f.submit :submit, value: 'OK'
