@@ -2,6 +2,7 @@ ActsAsTaggableOn::Tag.class_eval do
   has_many :treasures, through: :taggings, source: :taggable, source_type: 'Treasure'
 
   update_index 'treasures#treasure', :treasures
+  update_index 'tags', :self
 end
 
 ActsAsTaggableOn::Tagging.class_eval do

@@ -9,12 +9,11 @@ class TagsController < ApplicationController
 
   private
 
-  def autocomplete_query(q)
-    q = "%#{q}%"
-    ActsAsTaggableOn::Tag.where("tags.name LIKE ?", q).order('name ASC').limit(5)
-  end
+    def autocomplete_query(q)
+      TagsIndex.suggest(name: { text: q, completion: { field: 'suggest' }}).suggest
+    end
 
-  def autocomplete_data(q)
-    autocomplete_query(q).map(&:name)
-  end
+    def autocomplete_data(q)
+      autocomplete_query(q)["name"].first["options"].map{ |r| r["text"]}
+    end
 end
