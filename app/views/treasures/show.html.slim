@@ -5,7 +5,11 @@
         i.fa.fa-star-o.fa-2x.star-icon
     - else
       i.fa.fa-star.fa-2x.star-icon.pull-right
-    h3= @treasure.title
+    h3
+      - if @treasure.user == current_user
+        => link_to edit_treasure_path(params[:id]) do
+          i.fa.fa-pencil
+      = @treasure.title
     = @treasure.tags_string
 
 
